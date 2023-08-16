@@ -18,6 +18,10 @@ namespace Number_Minigame
         }
 
         int themeCounter = 0;
+        int rows = 10;
+        int columns = 10;
+        
+        List<List<int>> NumbersVertikal = new List<List<int>>();
 
         private void Btn_Theme_Click(object sender, EventArgs e)
         {
@@ -70,6 +74,55 @@ namespace Number_Minigame
 
         private void startGame(bool solve)
         {
+            generateNumbers();
+            showNumbers();
+        }
+
+        private void generateNumbers()
+        {
+            Random numbers = new Random();
+
+            // Create Number field
+            for (int i = 0; i < rows; i++)
+            {
+                List<int> NumbersHorizontal = new List<int>();
+
+                for (int j = 0; j < columns; j++)
+                {
+                    NumbersHorizontal.Add(numbers.Next(0,10));
+                }
+
+                NumbersVertikal.Add(NumbersHorizontal);
+            }
+
+            // Create Numbers to search for
+        }
+
+        private void showNumbers()
+        {
+            for (int y = 0; y < columns; y++)
+            {
+                List<int> NumbersForRow = NumbersVertikal[y];
+
+                for (int x = 0; x < rows; x++)
+                {
+                    Button Btn_Number = new Button();
+
+                    // Wie im Designer, erschaffen von Buttons
+                    // (So erschaffen, damit nicht jeder einzelne Button einzeln erstellt/abgefragt werden muss)
+                    Btn_Number.Location = new Point(500 + x * 30, 100 + y * 30);
+                    Btn_Number.Name = "Btn_Card";
+                    Btn_Number.Size = new Size(30, 30);
+                    Btn_Number.TabIndex = 1;
+                    Btn_Number.Cursor = Cursors.Hand;
+                    Btn_Number.UseVisualStyleBackColor = true;
+                    Btn_Number.Font = new Font("Microsoft Sans Serif", 16F);
+
+                    Btn_Number.Text = NumbersForRow[x].ToString();
+
+                    this.Controls.Add(Btn_Number);
+                }
+            }
 
         }
 
@@ -83,6 +136,12 @@ namespace Number_Minigame
             {
                 GB_Colours.Visible = false;
             }
+        }
+
+        private void Btn_Rules_Click(object sender, EventArgs e)
+        {
+
+
         }
     }
 }

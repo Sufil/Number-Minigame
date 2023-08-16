@@ -30,8 +30,6 @@ namespace Number_Minigame
         private void InitializeComponent()
         {
             this.Btn_Theme = new System.Windows.Forms.Button();
-            this.GB_Number_Container = new System.Windows.Forms.GroupBox();
-            this.GB_Numbers_To_Find = new System.Windows.Forms.GroupBox();
             this.Btn_Start = new System.Windows.Forms.Button();
             this.RBtn_Normal = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
@@ -51,26 +49,6 @@ namespace Number_Minigame
             this.Btn_Theme.Text = "Light Mode";
             this.Btn_Theme.UseVisualStyleBackColor = true;
             this.Btn_Theme.Click += new System.EventHandler(this.Btn_Theme_Click);
-            // 
-            // GB_Number_Container
-            // 
-            this.GB_Number_Container.ForeColor = System.Drawing.Color.GhostWhite;
-            this.GB_Number_Container.Location = new System.Drawing.Point(368, 12);
-            this.GB_Number_Container.Name = "GB_Number_Container";
-            this.GB_Number_Container.Size = new System.Drawing.Size(610, 600);
-            this.GB_Number_Container.TabIndex = 1;
-            this.GB_Number_Container.TabStop = false;
-            this.GB_Number_Container.Visible = false;
-            // 
-            // GB_Numbers_To_Find
-            // 
-            this.GB_Numbers_To_Find.ForeColor = System.Drawing.Color.GhostWhite;
-            this.GB_Numbers_To_Find.Location = new System.Drawing.Point(1030, 12);
-            this.GB_Numbers_To_Find.Name = "GB_Numbers_To_Find";
-            this.GB_Numbers_To_Find.Size = new System.Drawing.Size(346, 600);
-            this.GB_Numbers_To_Find.TabIndex = 2;
-            this.GB_Numbers_To_Find.TabStop = false;
-            this.GB_Numbers_To_Find.Visible = false;
             // 
             // Btn_Start
             // 
@@ -118,6 +96,7 @@ namespace Number_Minigame
             this.Btn_Rules.TabIndex = 6;
             this.Btn_Rules.Text = "How to Play";
             this.Btn_Rules.UseVisualStyleBackColor = true;
+            this.Btn_Rules.Click += new System.EventHandler(this.Btn_Rules_Click);
             // 
             // CB_Colours
             // 
@@ -153,8 +132,6 @@ namespace Number_Minigame
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.RBtn_Normal);
             this.Controls.Add(this.Btn_Start);
-            this.Controls.Add(this.GB_Numbers_To_Find);
-            this.Controls.Add(this.GB_Number_Container);
             this.Controls.Add(this.Btn_Theme);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -165,8 +142,6 @@ namespace Number_Minigame
         #endregion
 
         private System.Windows.Forms.Button Btn_Theme;
-        private System.Windows.Forms.GroupBox GB_Number_Container;
-        private System.Windows.Forms.GroupBox GB_Numbers_To_Find;
         private System.Windows.Forms.Button Btn_Start;
         private System.Windows.Forms.RadioButton RBtn_Normal;
         private System.Windows.Forms.RadioButton radioButton1;
