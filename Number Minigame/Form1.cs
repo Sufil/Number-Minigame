@@ -51,5 +51,38 @@ namespace Number_Minigame
             Btn_Theme.Enabled = false;
             // Still misses the Chaos
         }
+
+        private void Btn_Start_Click(object sender, EventArgs e)
+        {
+            bool ComputerPlays;
+
+            if (RBtn_Normal.Checked)
+            {
+                ComputerPlays = false;
+            }
+            else
+            {
+                ComputerPlays = true;
+            }
+
+            startGame(ComputerPlays);
+        }
+
+        private void startGame(bool solve)
+        {
+
+        }
+
+        private void CB_Colours_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CB_Colours.Checked)
+            {
+                GB_Colours.Visible = true;
+            }
+            else
+            {
+                GB_Colours.Visible = false;
+            }
+        }
     }
 }
