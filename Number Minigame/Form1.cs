@@ -16,5 +16,40 @@ namespace Number_Minigame
         {
             InitializeComponent();
         }
+
+        int themeCounter = 0;
+
+        private void Btn_Theme_Click(object sender, EventArgs e)
+        {
+            themeCounter++;
+
+            switch (themeCounter)
+            {
+                case 1:
+                    {
+                        MessageBox.Show("What the fuck is wrong with you", "Error");
+                    }
+                    break;
+
+                case 2:
+                    {
+                        MessageBox.Show("No. Stop it. This will not happen.", "Error");
+                    }
+                    break;
+
+                case 3:
+                    {
+                        MessageBox.Show("You know what? Fuck you.", "Error");
+                        startChaos();
+                    }
+                    break;
+            }
+        }
+
+        private void startChaos()
+        {
+            Btn_Theme.Enabled = false;
+            // Still misses the Chaos
+        }
     }
 }
